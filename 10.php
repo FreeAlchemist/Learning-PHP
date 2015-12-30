@@ -23,13 +23,12 @@ echo "<table>";
 		</tr>";
 foreach ($xml as $key => $value) {
 	// print_r($key);
-	// print_r($value->fio->lastname);
+	// print_r($value);
 	// echo "<a href=\"$uploadfile\"; target=\"blank\">".$value->fio->lastname."</a>";
-	
-	
+		
 	echo "<tr>";
 	echo "<td>";
-	echo "<a href=\"$uploadfile\"; target=\"10form.html\">"
+	echo "<a href=\"10form.php\"; target=\"_self\" id=".$value['id'].">"
 	    .iconv("UTF-8","cp1251",$value->fio->lastname)." "
 	    .iconv("UTF-8","cp1251",$value->fio->firstname)." "
 	    .iconv("UTF-8","cp1251",$value->fio->surname)."</a>";
@@ -50,5 +49,6 @@ foreach ($xml as $key => $value) {
 	
 }
 echo "</table>";
+// header('Location:10form.php');
 ?>
 </body>
