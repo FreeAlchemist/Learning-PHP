@@ -10,17 +10,15 @@
     <input type='submit'>
 </form>
 <hr>
-
-
 <?php
 $uploaddir = './uploads/';
 $uploadfile = $uploaddir . "9.txt";
 
 echo '<pre>';
 if (move_uploaded_file($_FILES['file_upload']['tmp_name'], $uploadfile)) {
-    echo "Файл корректен и был успешно загружен.\n";
+    echo "текст1.\n";
 } else {
-    echo "Возможная атака с помощью файловой загрузки!\n";
+    echo "текст2!\n";
 }
 
 print_r($_POST);
@@ -32,7 +30,7 @@ $content=file_get_contents($uploadfile);
 // echo $content;
 // $POST[filetext]=$content;
 
-echo 'Некоторая отладочная информация:';
+echo 'текст3:';
 print_r($_FILES);
 
 print "</pre>";
@@ -45,8 +43,10 @@ print "</pre>";
 		<?=$content;?>
 	</textarea>
 	 <input type='submit'>
-	 <a href=<?=$uploadfile;?>>Скачать</a>
+	 <a href=<?=$uploadfile;?> target="blank">Скачать</a>
 </form>
-
-
+<hr>
+<form method="post" name="filedownload" action='filedownload.php'>
+		 <input type='submit' value="download">
+	 </form>
 </body>
