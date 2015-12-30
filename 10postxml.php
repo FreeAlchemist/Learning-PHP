@@ -5,7 +5,6 @@
 </head>
 <body>
 	<?php
-
+	header('Location:10.php');
 	?>
-
 </body>
