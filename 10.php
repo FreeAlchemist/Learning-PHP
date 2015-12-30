@@ -7,12 +7,13 @@
 <body>
 	
 <?php
-if (file_exists('10.xml')) {
-    $xml = simplexml_load_file('10.xml');
+$filename="10.xml";
+if (file_exists($filename)) {
+    $xml = simplexml_load_file($filename);
  
     // print_r($xml);
 } else {
-    exit('Failed to open test.xml.');
+    exit('Failed to open '.$filename);
 }
 echo "<table>";
 	echo "<tr>
