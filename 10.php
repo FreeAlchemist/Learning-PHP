@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="windows-cp1251">
+<link rel=Stylesheet href="10.css">
 </head>
 <body>
 	
@@ -13,21 +14,22 @@ if (file_exists('10.xml')) {
 } else {
     exit('Failed to open test.xml.');
 }
-foreach ($xml as $key => $value) {
-	// print_r($key);
-	// print_r($value->fio->lastname);
-	// echo "<a href=\"$uploadfile\"; target=\"blank\">".$value->fio->lastname."</a>";
-	echo "<table>";
+echo "<table>";
 	echo "<tr>
 		<td>ФИО</td>
 		<td>Телефон</td>
 		<td>Дата рождения</td>
 		<td>Адрес</td>
 		</tr>";
+foreach ($xml as $key => $value) {
+	// print_r($key);
+	// print_r($value->fio->lastname);
+	// echo "<a href=\"$uploadfile\"; target=\"blank\">".$value->fio->lastname."</a>";
+	
 	
 	echo "<tr>";
 	echo "<td>";
-	echo "<a href=\"$uploadfile\"; target=\"blank\">"
+	echo "<a href=\"$uploadfile\"; target=\"10form.html\">"
 	    .iconv("UTF-8","cp1251",$value->fio->lastname)." "
 	    .iconv("UTF-8","cp1251",$value->fio->firstname)." "
 	    .iconv("UTF-8","cp1251",$value->fio->surname)."</a>";
@@ -45,10 +47,8 @@ foreach ($xml as $key => $value) {
 		.iconv("UTF-8","cp1251",$value->adress->city);
 	echo "</td>";
 	echo "</tr>";
-	echo "</table>";
+	
 }
-
+echo "</table>";
 ?>
-
-
 </body>
