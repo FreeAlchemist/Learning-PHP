@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<contactlist>
+	<contact id="1">
+		<fio>
+			<lastname>Петров</lastname>
+			<firstname>Иван</firstname>
+			<surname>Сидорович</surname>
+		</fio>
+		<birthdate>
+			<day>01</day>
+			<month>02</month>
+			<year>1984</year>
+		</birthdate>
+		<adress>
+			<country>Россия</country>
+			<city>Ленинград</city>
+		</adress>
+		<phone>89995554433</phone>
+	</contact>
+</contactlist>
