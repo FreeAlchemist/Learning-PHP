@@ -1,4 +1,28 @@
-table{border:solid 2px Saddlebrown;}
+table{
+	border:solid 2px Saddlebrown;
+	box-shadow:0 0 5px Sienna;
+	border-radius: 5px;
+
+}
 tr{background-color: Linen;}
 td{padding: 5px;}
+
+  @-webkit-keyframes borderanim1 {
+0% {border-color:white;}
+40% {border-color:Wheat;}
+60% {border-color:Saddlebrown;}
+100% {border-color:Linen;}
+ }
+
+table:hover{
+background: Linen;
+background: radial-gradient(at 25% 25%, white,Linen, Wheat, Burlywood);
+-webkit-animation-name:borderanim1;
+-webkit-animation-timing-function:linear;
+-webkit-animation-duration:1s;
+-webkit-animation-delay:0s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:normal;
+-webkit-animation-play-state:running;	
+}
 /*form{background-color: Linen;}*/
