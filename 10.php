@@ -52,7 +52,6 @@ foreach ($xml as $key => $value) {
 		.iconv("UTF-8","cp1251",$value->adress->city);
 	echo "</td>";
 	echo "</tr>";
-	
 }
 echo "</table>";
 // header('Location:10form.php');
