@@ -10,6 +10,7 @@
 	$filename=$_POST['filename'];
 	$id=$_POST['id'];
 	$del_elements=array();
+	$contactnum=0;
 	if (file_exists($filename)) {
 	    $xml = simplexml_load_file($filename);
 	    // print_r($xml);
@@ -25,6 +26,15 @@
 					print_r($value);
 					unset($value[0]);
 				}
+			}
+			else if (!empty($_POST['create'])) {
+				// $xml->addChild("contact");
+				if ($key=="contact") {
+					$contactnum++;
+					
+				}
+				// $xml->contact[]
+
 			}
 			else{
 				$value->fio->lastname=$_POST['lastname'];
@@ -42,36 +52,11 @@
 			}
 		}
 	}
-	// print_r($xml->asXML());
-	$content=$xml->asXML();
-	print_r($content);
-	file_put_contents($filename, $content);
-
-
-
+	echo $contactnum;
 	
-	// if (!empty($_POST['delete'])) {
-	// 	foreach ($xml as $key => $value) {
-	// 		if ($value['id']==$id) {
-	// 			$del_elements[]=$value;
-				
-	// 		print_r($xml);
-	// 		}
-	// 	}
-
-	// 	foreach ($del_elements as $key => $value) {
-	// 		print_r($value);
-	// 		unset($value[0]);
-	// 	}
-
-	// 	$content=$xml->asXML();
-	// 	print_r($content);
-	// 	file_put_contents($filename, $content);
-	// }
-	
-
-
-
-	header('Location:10.php');
+	// $content=$xml->asXML();
+	// print_r($content);
+	// file_put_contents($filename, $content);
+	// header('Location:10.php');
 	?>
 </body>
