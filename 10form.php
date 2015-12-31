@@ -4,19 +4,98 @@
 	<link rel=Stylesheet href="10.css">
 </head>
 	<body>
-		<form method="post" action="10postxml.php">
+	<?php
+	echo $_GET['id'];
+	echo "<br>";
+	echo $_GET['filename'];
+	$id=$_GET['id'];
+	$filename=$_GET['filename'];
+	// $filename="10.xml";
+	if (file_exists($filename)) {
+	    $xml = simplexml_load_file($filename);
+	    // print_r($xml);
+	} else {
+	    exit('Failed to open !'.$filename."!");
+	}
+	$maxid=0;
+	foreach ($xml as $key => $value) {
+		if ($value['id']==$id) {
+				
+		echo '<form method="post" action="10postxml.php">
 			<input type="reset">
-			<p>Фамилия: <input type="text" name="lastname" placeholder="Петров" value="Петров" autofocus required></p>
-			<p>Имя: <input type="text" name="firstname" placeholder="Иван" value="Иван" required></p>
-			<p>Отчество: <input type="text" name="mothername" placeholder="Сидорович"></p>
-			<p>Телефон: <input type="text" name="phone" placeholder="89995554433" value="89995554433" required></p>
-			<p>Дата рождения: <input type="date"></p>
-			<p>Адрес: <input type="text" name="adress" placeholder="Улица Ленина"></p>
+			<table>
+				<tr>
+					<td>Фамилия</td>
+					<td>Имя</td>
+					<td>Отчество</td>
+					<td>Телефон</td>
+					<td>Дата рождения</td>
+				</tr>
+				<tr>';
+		echo '<td><input type="text" name="lastname" value="'.$value->fio->lastname.'"></td>';
+		echo '<td><input type="text" name="firstname" placeholder="Иван" value="'.$value->fio->firstname.'"></td>';
+		echo '<td><input type="text" name="surname" value="'.$value->fio->surname.'"></td>';
+		echo '<td><input type="text" name="phone" value="'.$value->phone.'"></td>';
+		$bd=$value->birthdate;
+		echo '<td><input name="birthdate" type="date" value="'.$bd->year.'-'.$bd->month.'-'.$bd->day.'"></td>';
+		// echo ''..'';
+		echo '</tr><tr>
+					<td>Страна</td>
+					<td>Город</td>
+				</tr>
+				<tr>';
+		$ad=$value->adress;
+		echo '<td><input type="text" name="country" value="'.$ad->country.'"></td>';
+		echo '<td><input type="text" name="city" value="'.$ad->city.'"></td>';	
+
+		echo '				</tr>
+			</table>
 			<input type="submit" value="Сохранить изменения">
-		</form>	
+			<input type="hidden" name="filename" value="'.$filename.'">
+			<input type="hidden" name="id" value="'.$id.'">
+			<input type="submit" name="delete" value="Удалить контакт">
+		</form>';
+		}
+		if($value['id']>$maxid){
+			$maxid=$value['id'];
+		}
+	}
+	if (!empty($_POST['add'])) {}
+		echo '<form method="post" action="10postxml.php">
+					<input type="reset">
+					<table>
+						<tr>
+							<td>Фамилия</td>
+							<td>Имя</td>
+							<td>Отчество</td>
+							<td>Телефон</td>
+							<td>Дата рождения</td>
+						</tr>
+						<tr>';
+				echo '<td><input type="text" name="lastname" value="$value->fio->lastname"></td>';
+				echo '<td><input type="text" name="firstname" placeholder="Иван" value="$value->fio->firstname"></td>';
+				echo '<td><input type="text" name="surname" value="$value->fio->surname"></td>';
+				echo '<td><input type="text" name="phone" value="$value->phone"></td>';
+				$bd=$value->birthdate;
+				echo '<td><input name="birthdate" type="date" value="$bd->year-month-day"></td>';
+				// echo ''..'';
+				echo '</tr><tr>
+							<td>Страна</td>
+							<td>Город</td>
+						</tr>
+						<tr>';
+				$ad=$value->adress;
+				echo '<td><input type="text" name="country" value="$ad->country"></td>';
+				echo '<td><input type="text" name="city" value="$ad->city"></td>';	
+
+				echo '				</tr>
+					</table>
+					<input type="submit" value="Сохранить изменения">
+					<input type="hidden" name="filename" value="$filename">
+					<input type="hidden" name="id" value="$id">
+					<input type="submit" name="delete" value="Удалить контакт">
+				</form>';
+	?>
+
 	</body>
 </html>
-<?php
-
-echo $_SERVER['HTTP_REFERER'];
-?>
