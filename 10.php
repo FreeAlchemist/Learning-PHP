@@ -28,10 +28,6 @@ echo "<table rules=\"all\">";
 		<td>Адрес</td>
 		</tr>";
 foreach ($xml as $key => $value) {
-	// print_r($key);
-	// print_r($value);
-	// echo "<a href=\"$uploadfile\"; target=\"blank\">".$value->fio->lastname."</a>";
-		
 	echo "<tr>";
 	echo "<td>";
 	echo "<a href=\"10form.php?id=".$value['id']."&filename=".$filename."\">"
@@ -54,6 +50,5 @@ foreach ($xml as $key => $value) {
 	echo "</tr>";
 }
 echo "</table>";
-// header('Location:10form.php');
 ?>
 </body>
