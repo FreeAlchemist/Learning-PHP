@@ -36,14 +36,15 @@
 		echo "<hr>";
 
 		echo "MAXID: ";
-		echo $maxid;
+		echo $maxid.$value['id'];
+		echo $key;
 		echo "<hr>";
 
-		if($value['id']>$maxid){
+		if((int)$value['id']>$maxid){
 			echo "VALUE[id]: ";
 			echo $value['id'];
 
-			$maxid=$value['id'];
+			$maxid=(int)$value['id'];
 
 			echo "<hr>";
 			echo "MAXID changed to: ";
