@@ -1,2 +1,4 @@
-body{background-color: Linen;}
-td{border:solid 2px Burlywood;}
+table{border:solid 2px Saddlebrown;}
+tr{background-color: Linen;}
+td{padding: 5px;}
+/*form{background-color: Linen;}*/
