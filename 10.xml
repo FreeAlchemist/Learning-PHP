@@ -6,6 +6,7 @@
 			<firstname>Иван</firstname>
 			<surname>Сидорович</surname>
 		</fio>
+		<phone>89995554433</phone>
 		<birthdate>
 			<day>01</day>
 			<month>02</month>
@@ -15,6 +16,22 @@
 			<country>Россия</country>
 			<city>Ленинград</city>
 		</adress>
-		<phone>89995554433</phone>
+	</contact>
+	<contact id="2">
+		<fio>
+			<lastname>Дубавина</lastname>
+			<firstname>Валентина</firstname>
+			<surname>Николаевна</surname>
+		</fio>
+		<phone>+76667778855</phone>
+		<birthdate>
+			<day>10</day>
+			<month>01</month>
+			<year>2000</year>
+		</birthdate>
+		<adress>
+			<country>Украина</country>
+			<city>Киев</city>
+		</adress>
 	</contact>
 </contactlist>
