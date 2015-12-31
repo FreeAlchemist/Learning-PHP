@@ -7,9 +7,12 @@
 	<?php
 	echo "GET[id]: ";
 	echo $_GET['id'];
-	echo "<br>";
-	echo "filename: ";
+	echo "<hr>";
+
+	echo "FILENAME: ";
 	echo $_GET['filename'];
+	echo "<hr>";
+
 	$id=$_GET['id'];
 	$filename=$_GET['filename'];
 	$lastname;
@@ -25,7 +28,28 @@
 	    exit('Failed to open !'.$filename."!");
 	}
 	$maxid=0;
+	
 	foreach ($xml as $key => $value) {
+		// print_r($xml);
+		echo "FOREACH VALUE[id]: ";
+		echo $value['id'];
+		echo "<hr>";
+
+		echo "MAXID: ";
+		echo $maxid;
+		echo "<hr>";
+
+		if($value['id']>$maxid){
+			echo "VALUE[id]: ";
+			echo $value['id'];
+
+			$maxid=$value['id'];
+
+			echo "<hr>";
+			echo "MAXID changed to: ";
+			echo $maxid;
+			echo "<hr>";
+		}
 		if ($value['id']==$id) {
 				
 			echo '<form method="post" action="10postxml.php">
@@ -63,14 +87,8 @@
 				<input type="submit" name="delete" value="Удалить контакт">
 			</form>';
 		}
-		if($value['id']>$maxid){
-			echo "<br>value[id]: ";
-			echo $value['id'];
-			$maxid=$value['id'];
-			echo "<br>maxid: ";
-			echo $maxid;
-		}
 	}
+
 	if (!empty($_GET['add'])) {
 		echo '<form method="post" action="10postxml.php">
 					<input type="reset">
