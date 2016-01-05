@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="windows-1251"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <contactlist>
 	<contact id="1">
 		<fio>
@@ -21,8 +21,8 @@
 		<fio>
 			<lastname>Дубавина</lastname>
 			<firstname>Валентина</firstname>
-			<surname>Николаевна</surname>
-		</fio>
+			<surname>Сергеевна</surname>
+		<phone>+76667778855</phone></fio>
 		<phone>+76667778855</phone>
 		<birthdate>
 			<day>10</day>
@@ -34,4 +34,4 @@
 			<city>Киев</city>
 		</adress>
 	</contact>
-</contactlist>
+<contact id="3"><fio><lastname>Сидоров</lastname><firstname>Василий</firstname><surname>Иванович</surname><phone>89990004423</phone></fio><phone>89990004423</phone><birthdate><day>02</day><month>04</month><year>1979</year></birthdate><adress><country>Россия</country><city>Новосибирск</city></adress></contact><contact id="4"><fio><lastname>Скворцов</lastname><firstname>Евгений</firstname><surname>Николаевич</surname><phone>89996669966</phone></fio><phone>89996669966</phone><birthdate><day>09</day><month>09</month><year>1875</year></birthdate><adress><country>Россия</country><city>Ленинград</city></adress></contact></contactlist>
