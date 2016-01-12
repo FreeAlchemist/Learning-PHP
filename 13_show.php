@@ -5,41 +5,36 @@
 </head>
 <body>
 <?php
-$dir=$_GET['dir'];
-echo "Указанный каталог: ".$dir." содержит:<hr>";
+$path=$_GET['path'];
+// $path="D:\www";
+// $path="D:\www\beta";
+// $path="D:\www\phonebook";
+// $path="D:\www\exercise";
 
+echo "Указанный каталог: ".$path." содержит:<hr>";
 
-if ($handle = opendir($dir)) {
-    while (false !== ($entry = readdir($handle))) {
-        if ($entry != "." && $entry != "..") {
-            echo "$entry<br>";
-            
-        }
-    }
-    closedir($handle);
-}
-
-echo "<hr>";
-
-// echo "Работаем в каталоге: ".getcwd() . "<br>";
-
-$files = scandir($dir);
-
-foreach ($files as $key => $value) {
-	if(is_dir($value)){
-		echo "\\".$value;
-		 $files1 = scandir($value);
-		 foreach ($files1 as $key => $value) {
-		 	echo "\\".$value."<br>";
-		 }
-		 echo "<br>";
-		
+function showpath($path,$depth=0,$foldernum=0){
+	$arr = scandir($path);
+	foreach ($arr as $key => $value) {
+		if(substr($value, 0,1) != "."){
+			if (is_dir($path . '/' . $value) == true){
+				for ($i=0; $i<$depth; $i++){
+					echo " &nbsp; ";
+				}
+				echo "<b>".$value."</b><br>";
+				showpath($path . '/' . $value,$depth+1);
+			}
+			else {
+				for ($i=0; $i<$depth; $i++){
+					echo "&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;";
+				}
+				echo $value."<br>";
+			}
+		}
 	}
-	// else{echo "not dir<br>";}
 }
-//is_dir(filename);
 
-echo "<hr>";
-print_r($files);
+showpath($path);
+
 ?>
 </body>
