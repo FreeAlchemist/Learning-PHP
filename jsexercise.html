@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	// console.log("Exercise 01: Hello World 100");
+	// function hello(step1){
+	// 	var step1 = step1 || 11;
+	// 	for (var i = 0; i < step1; i++) {
+	// 		console.log("Hello World!");
+	// 	};
+	// }
+	// hello(12);
+	// console.log(" ");
+
+	// console.log("Exercise 02: Факториал");
+	// function fact(num){
+	// 	// alert(typeof(num));
+	// 	if(typeof(num) == 'number'){
+	// 		if(num > 0){
+	// 			var result = 1;
+	// 			for (var i = 1; i <= num; i++) {
+	// 				result = result * i;
+	// 			}
+	// 			return result;
+	// 		}
+	// 		else{console.log("Укажите положительное число!")}
+	// 	}
+	// 	else{console.log("Укажите число!")}
+	// }
+	// console.log("Факториал числа равен: "+fact(5));
+	// console.log(" ");
+
+	// console.log("Exercise 03: Последовательность Фибоначчи");
+	// function fibo(num){
+	// 	var result1=1;
+	// 	var result2=1;
+	// 	var result3;
+	// 	console.log("Фибоначчи: "+ result1);
+	// 	for (var i = 1; i < num; i++) {
+	// 		result3 = result1 + result2;
+	// 		result1 = result2;
+	// 		result2 = result3;
+	// 		console.log("Фибоначчи: "+ result1);
+	// 	}
+	// 	console.log(" ");
+	// }
+
+	// function fibo2(num){
+	// 	var result1=1;
+	// 	var result2=1;
+	// 	var result3=-Infinity;
+	// 	console.log("Фибоначчи: "+ result1);
+	// 	console.log("Фибоначчи: "+ result2);
+	// 	while (true) {
+	// 		result3 = result1 + result2;
+	// 		if(result3 >= num){break;}
+	// 		result1 = result2;
+	// 		result2 = result3;
+	// 		console.log("Фибоначчи: "+ result3);
+	// 	}
+	// }
+
+	// fibo(15);
+	// fibo2(15);
+	// console.log(" ");
+
+	// console.log("Exercise 04: Полиморфизм");
+
+	// console.log(" ");
+
+	console.log("Exercise 05: Считаем слова и символы");
+
+	var str="Строка? ?для, подсчета; слов..  и !символов   в\n девяти словах";
+	console.log("str: ");
+	console.log(str);
+
+	var reg=/[\.,;\!\?\s\n]/;
+	var arr=str.split(reg);
+
+	console.log("arr: ");
+	console.log(arr);
+	console.log(" ");
+
+
+	var reg=/[.]*/;
+	var arr=str.split(reg);
+
+	console.log("arr: ");
+	console.log(arr);
+	console.log("arr length (Символов): ");
+	console.log(arr.length);
+	console.log(" ");
+
+
+	// var reg=/[\s]/;
+	var reg=/([а-яА-Я]+)/g;
+	var arr=str.split(reg);
+
+	console.log("arr: ");
+	console.log(arr);
+	console.log("arr length (Слов): ");
+	console.log(arr.length);
+
+
+	console.log(" ");
+
+	// console.log("Exercise 06: Удаляем повторы");
+
+	// console.log(" ");
+
+	// console.log("Exercise 07: Проверяем скобки мат. выражения");
+
+	// console.log(" ");
+
+</script>
+</body>
+</html>
