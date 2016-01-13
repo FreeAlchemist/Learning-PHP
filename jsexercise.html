@@ -49,7 +49,6 @@
 	// 	}
 	// 	console.log(" ");
 	// }
-
 	// function fibo2(num){
 	// 	var result1=1;
 	// 	var result2=1;
@@ -64,58 +63,126 @@
 	// 		console.log("Фибоначчи: "+ result3);
 	// 	}
 	// }
-
 	// fibo(15);
 	// fibo2(15);
 	// console.log(" ");
 
-	// console.log("Exercise 04: Полиморфизм");
+	console.log("Exercise 04: Полиморфизм");
+	function A(){this.x = 1;}
+	A.prototype.DoIt = function(){this.x += 1;}
+	a = new A;
+	console.log(a.x);
 
-	// console.log(" ");
+	B.prototype = new  A;
+	B.prototype.constructor = B;
+
+	function B(){
+		A.call(this);
+		this.x = 10;
+	}
+
+	B.prototype.DoIt = function(){
+		A.prototype.DoIt.call(this);
+		this.x += 2;
+	}
+	b = new B;
+	console.log(b.x);
+
+	C.prototype = new  B;
+	C.prototype.constructor = C;
+
+	function C(){
+		B.call(this);
+		this.x = 1;
+	}
+	C.prototype.DoIt = function(){
+		B.prototype.DoIt.call(this);
+		this.x += 2;
+	}
+	c = new C;
+	console.log(c.x);
+
+	D.prototype = new  C;
+	D.prototype.constructor = D;
+
+	function D(){
+		C.call(this);
+		this.x = 1;
+	}
+	D.prototype.DoIt = function(){
+		C.prototype.DoIt.call(this);
+		this.x += 3;
+	}
+	d = new D;
+	console.log(d.x);
+
+	// console.log((b instanceof A) + ',' + (b instanceof B) + ',' + (c instanceof B) + ',' + (d instanceof C));
+	console.log(a.x + ',' + b.x + ',' + c.x + ',' + d.x);
+	a.DoIt();
+	b.DoIt();
+	c.DoIt();
+	d.DoIt();
+	console.log(a.x + ',' + b.x + ',' + c.x + ',' + d.x);
+	console.log(" ");
 
 	console.log("Exercise 05: Считаем слова и символы");
-
 	var str="Строка? ?для, подсчета; слов..  и !символов   в\n девяти словах";
 	console.log("str: ");
 	console.log(str);
-
+	console.log("str.length: ");
+	console.log(str.length);
 	var reg=/[\.,;\!\?\s\n]/;
 	var arr=str.split(reg);
-
 	console.log("arr: ");
 	console.log(arr);
 	console.log(" ");
-
-
 	var reg=/[.]*/;
 	var arr=str.split(reg);
-
 	console.log("arr: ");
 	console.log(arr);
 	console.log("arr length (Символов): ");
 	console.log(arr.length);
 	console.log(" ");
-
-
 	// var reg=/[\s]/;
-	var reg=/([а-яА-Я]+)/g;
-	var arr=str.split(reg);
-
+	// var reg=/([а-яА-Я]+)/g;
+	// var arr=str.split(reg);
+	var arr=str.split(' ');
 	console.log("arr: ");
 	console.log(arr);
 	console.log("arr length (Слов): ");
 	console.log(arr.length);
-
-
 	console.log(" ");
-
+	console.log(arr[3]);
 	// console.log("Exercise 06: Удаляем повторы");
-
 	// console.log(" ");
-
 	// console.log("Exercise 07: Проверяем скобки мат. выражения");
-
 	// console.log(" ");
+
+
+
+	// foreach (count_chars($str2, 1) as $i => $val) {
+	//    echo "\"" , chr($i) , "\" встречается в строке $val раз(а).\n<br>";
+	// }
+
+	// for () {
+	// 	console.log("встречается в строке "+" раз");
+
+	// };
+
+	// var anyString="Привет, мир"	
+	// console.log("Символ на позиции 0 '" + anyString.charAt(0) + "'");
+	// console.log("Символ на позиции 1 '" + anyString.charAt(1) + "'");
+	// console.log("Символ на позиции 2 '" + anyString.charAt(2) + "'");
+	// console.log("Символ на позиции 3 '" + anyString.charAt(3) + "'");
+	// console.log("Символ на позиции 4 '" + anyString.charAt(4) + "'");
+	// console.log("Символ на позиции 999 '" + anyString.charAt(999) + "'");
+
+
+
+	// foreach (count_chars($str2, 1) as $i => $val) {
+	//    console.log("\"" , chr($i) , "\" встречается в строке $val раз(а).\n<br>");
+	// }
+
 
 </script>
 </body>
