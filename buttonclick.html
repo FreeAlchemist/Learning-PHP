@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+<input type="button" value="countbtn" onclick="count()">
+<input type="text" size="10" id="countfield" disabled>
+<input type="button" value="discountbtn" onclick="discount()">
+<script>
+var clicked=0;
+var wintop = window.top
+var wintopdoc = wintop.document
+var countfield = wintopdoc.getElementById("countfield")
+
+function count(){
+	clicked++
+	countfield.value=clicked
+}
+function discount(){
+	clicked--
+	countfield.value=clicked
+}
+</script>
+</body>
+</html>
