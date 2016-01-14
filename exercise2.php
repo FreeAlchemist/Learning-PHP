@@ -7,14 +7,14 @@
 
 <?php
 // echo "<hr>Exercise 06<br>";
-$str=str_split("ÌàìàÀÀ ìÁÁÁûëà ÀÀðàìÁÀó ìûëÁÁÁÁÁÀîìÁÁ");
+$str=str_split("МамаАА мБББыла ААрамБАу мылБББББАомББ");
 print_r($str);
 foreach ($str as $key => $value) {
-	if ($value=="À") {
+	if ($value=="А") {
 		unset($str[$key]);
 	}
-	if ($value=="Á") {
-		if ($str[$key-1]=="Á"){
+	if ($value=="Б") {
+		if ($str[$key-1]=="Б"){
 			unset($str[$key]);
 			unset($str[$key-1]);
 		}
@@ -41,16 +41,16 @@ function func($m){
 			$rightcount++;
 			$rightindex=$key;
 			if($rightcount > $leftcount){
-				echo "Íåâåðíî<br>";
+				echo "Неверно<br>";
 				return;
 			}
 		}
 	}
 	if ($leftcount==$rightcount and $leftindex<$rightindex) {
-		echo "Âåðíî<br>";
+		echo "Верно<br>";
 	}
 	else{
-		echo "Íåâåðíî<br>";
+		echo "Неверно<br>";
 	}
 }
 
